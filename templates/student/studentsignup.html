@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+  <head>
+    <title>註冊學生帳號</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    {% include "quiz/navbar.html" %}
+
+<br><br><br>
+<h3 style="text-align: center;color: blue;">註冊學生帳號</h3>
+<form method="POST" autocomplete="off" enctype="multipart/form-data" style="margin: 50px;">
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="username">帳號</label>
+        {% render_field userForm.username|attr:'required:true'  class="form-control" placeholder="username" %}
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">密碼</label>
+        {% render_field userForm.password|attr:'required:true'  class="form-control" placeholder="password" %}
+      </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="first_name">名稱</label>
+          {% render_field userForm.first_name|attr:'required:true'  class="form-control" placeholder="Name" %}
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="profile_pic">用戶頭像</label>
+          {% render_field studentForm.profile_pic class="form-control" placeholder="" %}
+        </div>
+      </div>
+
+    <button type="submit" class="btn btn-primary">註冊</button>
+  </form>
+
+
+<br><br>
+{% include "quiz/footer.html" %}
+  </body>
+</html>

@@ -1,0 +1,47 @@
+{% extends 'student/studentbase.html' %}
+{% block content %}
+{% load static %}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<br><br>
+<div class="container my-4">
+    <div class="jumbotron">
+
+	      <h3 class="text-info text-center">開始測驗前，請先閱讀規則</h3>
+
+        <div class="row">
+
+            <div class="card border-info mx-4 my-4">
+                <div class="card-body text-info">
+
+                    <h4 class="card-title">測驗詳情：</h4>
+                    <p class="card-text">
+                        </p><ul style="list-style:decimal;">
+                            <li>測驗名稱：{{course.course_name}}</li>
+                            <li>總題數：{{total_questions}}</li>
+                            <li>總分：{{total_marks}}</li>
+                        </ul>
+                    <p></p>
+
+                    <h4 class="card-title">規則：</h4>
+                    <p class="card-text">
+                        </p><ul style="list-style:decimal;">
+                            <li><span class="text-danger">所有問題均為單一選擇題</span></li>
+                            <li>如果您按下刷新或返回上一頁，您將看到一個新問題，且您正在作答的問題將被計為已嘗試</li>
+                            <li>問題對每位用戶隨機顯示</li>
+                            <li>提交答案後，您將立即知道您的分數</li>
+                        </ul>
+                    <p></p>
+                    <a href="{% url 'start-exam' course.id  %}" class="btn btn-info">開始測驗</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br><br><br><br><br><br>
+{% endblock content %}

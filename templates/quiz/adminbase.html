@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-TW" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{% static 'css/admin_style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+</head>
+
+<body>
+
+  <input type="checkbox" id="check">
+  <!--header area start-->
+  <header>
+    <label for="check">
+      <i class="fas fa-bars" id="sidebar_btn" style="left: 200px; margin-top: 17px;"></i>
+    </label>
+    <div class="left_area">
+      <h3>CodeTutor</h3>
+    </div>
+    <div class="right_area">
+      <a href="/logout" class="logout_btn">登出</a>
+    </div>
+  </header>
+  <!--header area end-->
+  <!--sidebar start-->
+  <div class="sidebar">
+    <center>
+      <img src="{% static "image/admin.png" %}" class="profile_image" alt="">
+      <h4>管理員</h4>
+    </center>
+    <a href="/admin-dashboard"><i class="fas fa-tachometer-alt"></i><span>儀表板</span></a>
+    <a href="/admin-teacher"><i class="fas fa-chalkboard-teacher"></i><span>教師</span></a>
+    <a href="/admin-student"><i class="fas fa-user-graduate"></i><span>學生</span></a>
+    <a href="/admin-course"><i class="fas fa-book"></i><span>測驗</span></a>
+    <a href="/admin-question"><i class="fas fa-question-circle"></i><span>題目</span></a>
+  </div>
+  <!--sidebar end-->
+
+  <!--content start-->
+  <div class="content">
+    <br><br><br><br><br>
+    {% block content %}
+    {% endblock content %}
+    <br><br><br>
+    {% include "quiz/footer.html" %}
+  </div>
+  <!--content end-->
+</body>
+
+</html>

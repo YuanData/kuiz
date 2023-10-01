@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+{% load widget_tweaks %}
+<html lang="zh-TW" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>學生登入</title>
+    <link rel="stylesheet" href="{% static 'css/common_login_style.css' %}">
+  </head>
+  <body class="student-login">
+    {% include "quiz/navbar.html" %}
+    <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <form class="box" method="post">
+                    {% csrf_token %}
+                    <h1>學生登入</h1>
+
+                     {% render_field form.username class="form-control" placeholder="帳號" value="student_demo" %}
+                     {% render_field form.password class="form-control" placeholder="密碼" value="student_pasd" %}
+
+                     <input type="submit" name="" value="登入">
+                        <p class="lead">
+                          <a class="btn" href="studentsignup" role="button" style="color: dimgray; font-size: 14px;">註冊帳號</a>
+                        </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
+{% include "quiz/footer.html" %}
+  </body>
+</html>

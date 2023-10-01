@@ -1,0 +1,53 @@
+{% extends 'quiz/adminbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  a:link {
+        text-decoration: none;
+      }
+    
+  </style>
+</head>
+<h2 style="text-align:center; color:blue;">新增題目</h2>
+<form method="POST" autocomplete="off" style="margin:100px;margin-top: 0px;">
+    {%csrf_token%}
+    <div class="form-group">
+        <label for="question">測驗</label>
+      {% render_field questionForm.courseID|attr:'required:true' class="form-control" %}
+        <br>
+
+      <label for="question">題目</label>
+      {% render_field questionForm.question|attr:'required:true' class="form-control" %}
+        <br>
+      <label for="question_number">分數</label>
+      {% render_field questionForm.marks|attr:'required:true' class="form-control" %}
+        <br>
+      <label for="option1">選項 1</label>
+      {% render_field questionForm.option1|attr:'required:true' class="form-control" %}
+        <br>
+      <label for="option2">選項 2</label>
+      {% render_field questionForm.option2|attr:'required:true' class="form-control" %}
+        <br>
+      <label for="option3">選項 3</label>
+      {% render_field questionForm.option3|attr:'required:true' class="form-control" %}
+        <br>
+      <label for="option4">選項 4</label>
+      {% render_field questionForm.option4|attr:'required:true' class="form-control" %}
+        <br>
+      <label for="answer">答案</label>
+      {% render_field questionForm.answer|attr:'required:true' class="form-control" %}
+    </div>
+
+    <button type="submit" class="btn btn-primary">新增</button>
+  </form>
+<br><br><br>
+{% endblock content %}

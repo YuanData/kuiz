@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <title>教師帳號</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'css/common_style.css' %}">
+</head>
+
+<body>
+
+  {% include "quiz/navbar.html" %}
+  <br><br>
+  <div class="jumbotron" style="margin-bottom:0px;">
+    <h1 class="display-4">在線測驗</h1>
+    <p class="lead">註冊新的教師帳號</p>
+    <hr class="my-4">
+    <p>登入後即可管理測驗內容</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="teachersignup" role="button">註冊帳號</a>
+      <a class="btn btn-primary btn-lg" href="teacherlogin" role="button">登入</a>
+    </p>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+  {% include "quiz/footer.html" %}
+</body>
+
+</html>

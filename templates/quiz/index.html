@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-TW" dir="ltr">
+
+<head>
+  <title>CodeTutor</title>
+  <link rel="stylesheet" href="{% static 'css/common_style.css' %}">
+</head>
+<body>
+  {% include "quiz/navbar.html" %}
+<br>
+<section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
+  <div class="container text-center">
+    <h1 class="display-3 text-info">在線測驗</h1>
+    <p class="display-4 d-none d-sm-block">溫故知新 強化技能</p>
+    <p class="lead">登入開始技能測試</p>
+    <a href="/student/studentlogin" class="btn btn-lg btn-info" style="padding-right: 35px; font-size: 2rem;">
+      <i class="fa fa-sign-in" aria-hidden="true" style="font-size: 2rem;"></i> 登入
+    </a>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>  
+</section>
+  {% include "quiz/footer.html" %}
+
+
+</body>
+
+</html>
