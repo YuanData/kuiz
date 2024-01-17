@@ -1,0 +1,13 @@
+/* 導航欄的樣式 */
+.bs-example {
+  margin: 0px;
+}
+
+.bg-dark {
+  background-color: #212529!important;
+}
+
+.navbar-brand {
+  font-size: 20px;
+  font-family: sans-serif;
+}

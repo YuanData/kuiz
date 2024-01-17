@@ -1,0 +1,29 @@
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #212529;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 23px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+p {
+  text-align: center;
+}
